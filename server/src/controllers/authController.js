@@ -3,10 +3,12 @@ import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 import { env } from '../config/env.js';
 
+const isProduction = env.NODE_ENV === 'production';
+
 const COOKIE_OPTIONS = {
   httpOnly: true,
-  sameSite: env.NODE_ENV === 'production' ? 'strict' : 'lax',
-  secure: env.NODE_ENV === 'production',
+  sameSite: isProduction ? 'none' : 'lax',
+  secure: isProduction,
   maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
 };
 
@@ -123,8 +125,8 @@ export async function login(req, res, next) {
 export async function logout(req, res) {
   res.clearCookie('token', {
     httpOnly: true,
-    sameSite: env.NODE_ENV === 'production' ? 'strict' : 'lax',
-    secure: env.NODE_ENV === 'production',
+    sameSite: isProduction ? 'none' : 'lax',
+    secure: isProduction,
   });
   return res.status(200).json({
     success: true,

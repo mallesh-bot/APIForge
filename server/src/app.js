@@ -20,14 +20,42 @@ import mockShopKartRoutes from './routes/mockShopKartRoutes.js';
 
 const app = express();
 
+// Trust proxy for secure cookies behind reverse proxies (Render, Cloudflare, etc.)
+app.set('trust proxy', 1);
+
 // Security Headers
 app.use(helmet());
 
-// CORS configuration for cookies
+// CORS configuration for cross-origin requests & cookies
+const allowedOrigins = [
+  env.FRONTEND_ORIGIN,
+  'https://apiforge-b9a.pages.dev',
+  'https://apiforge-b9.pages.dev',
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+].filter(Boolean);
+
 app.use(
   cors({
-    origin: env.FRONTEND_ORIGIN,
+    origin: (origin, callback) => {
+      // Allow non-browser requests (e.g. mobile apps, curl, internal tests)
+      if (!origin) return callback(null, true);
+
+      // Allow configured origins
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      // Allow any Cloudflare Pages deployment for this project (e.g. preview branches)
+      if (/^https:\/\/([a-z0-9-]+\.)?apiforge(-[a-z0-9]+)?\.pages\.dev$/.test(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(null, false);
+    },
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
   })
 );
 

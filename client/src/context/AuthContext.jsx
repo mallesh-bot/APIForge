@@ -15,6 +15,11 @@ export function AuthProvider({ children }) {
           setUser(res.data.user);
         }
       } catch {
+        try {
+          localStorage.removeItem('apiforge_token');
+        } catch {
+          // ignore storage error
+        }
         setUser(null);
       } finally {
         setLoading(false);
@@ -26,6 +31,13 @@ export function AuthProvider({ children }) {
   const login = async (email, password) => {
     const res = await api.post('/auth/login', { email, password });
     if (res.data?.success) {
+      if (res.data.token) {
+        try {
+          localStorage.setItem('apiforge_token', res.data.token);
+        } catch {
+          // ignore storage error
+        }
+      }
       setUser(res.data.user);
     }
     return res.data;
@@ -34,6 +46,13 @@ export function AuthProvider({ children }) {
   const register = async (name, email, password) => {
     const res = await api.post('/auth/register', { name, email, password });
     if (res.data?.success) {
+      if (res.data.token) {
+        try {
+          localStorage.setItem('apiforge_token', res.data.token);
+        } catch {
+          // ignore storage error
+        }
+      }
       setUser(res.data.user);
     }
     return res.data;
@@ -43,6 +62,11 @@ export function AuthProvider({ children }) {
     try {
       await api.post('/auth/logout');
     } finally {
+      try {
+        localStorage.removeItem('apiforge_token');
+      } catch {
+        // ignore storage error
+      }
       setUser(null);
     }
   };

@@ -2,6 +2,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Cloudflare%20Pages-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://apiforge-b9a.pages.dev)
 [![Backend API](https://img.shields.io/badge/Backend%20API-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black)](https://apiforge-backend-g6n2.onrender.com/health)
+[![Demo Video](https://img.shields.io/badge/Demo%20Video-Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1X2Ny1NJwRy33F2jQ8te6oJQCDwymIcWd/view?usp=drive_link)
 [![Tests Passing](https://img.shields.io/badge/Tests-53%2F53%20Passed-22c55e?style=for-the-badge&logo=vitest&logoColor=white)](https://github.com/mallesh-bot/APIForge)
 [![Stack](https://img.shields.io/badge/MERN-MongoDB%20%7C%20Express%20%7C%20React%20%7C%20Node-00ed64?style=for-the-badge&logo=mongodb&logoColor=white)](https://github.com/mallesh-bot/APIForge)
 
@@ -16,18 +17,16 @@ APIForge is a modern, developer-first API testing and documentation workspace de
 | **🌐 Deployed Application (Frontend)** | [https://apiforge-b9a.pages.dev](https://apiforge-b9a.pages.dev) |
 | **⚡ Backend API Service** | [https://apiforge-backend-g6n2.onrender.com](https://apiforge-backend-g6n2.onrender.com) |
 | **🩺 Backend Health Endpoint** | [https://apiforge-backend-g6n2.onrender.com/health](https://apiforge-backend-g6n2.onrender.com/health) |
+| **🎥 Video Demonstration Walkthrough** | [Watch Video on Google Drive](https://drive.google.com/file/d/1X2Ny1NJwRy33F2jQ8te6oJQCDwymIcWd/view?usp=drive_link) |
 | **📦 GitHub Repository** | [https://github.com/mallesh-bot/APIForge](https://github.com/mallesh-bot/APIForge) |
 
 ---
 
 ## 🎥 Demonstration Video
 
-> [!NOTE]
-> Below is the designated placeholder for the project demonstration walkthrough video. Replace the URL with your recorded presentation or YouTube link.
+[![Watch APIForge Demonstration Video](https://img.shields.io/badge/Demo%20Video-Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1X2Ny1NJwRy33F2jQ8te6oJQCDwymIcWd/view?usp=drive_link)
 
-[![Watch APIForge Demonstration Video](https://img.shields.io/badge/Video%20Demo-Watch%20on%20YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](YOUR_DEMO_VIDEO_LINK_HERE)
-
-**Direct Link**: [Watch the Video Walkthrough](YOUR_DEMO_VIDEO_LINK_HERE) *(Replace `YOUR_DEMO_VIDEO_LINK_HERE` with your video link)*
+**Direct Link**: [Watch the Video Walkthrough on Google Drive](https://drive.google.com/file/d/1X2Ny1NJwRy33F2jQ8te6oJQCDwymIcWd/view?usp=drive_link)
 
 ---
 
